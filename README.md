@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Geração do Saber — site
 
-## Getting Started
-
-First, run the development server:
+Site do Geração do Saber, projeto da Cross Missions na Guiné-Bissau. Next.js 16 (App Router, Cache Components) · Tailwind CSS v4 · Framer Motion · Embla · zod · Supabase.
+Publicado na Vercel em https://geracaodosaber.vercel.app (crossmissions.vercel.app redireciona).
 
 ```bash
+npm install
+npx vercel@latest env pull   # variáveis do Supabase
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `content/` — conteúdo editável: projetos, equipe, depoimentos, contadores, pilares por página, eventos, planos e dados de doação.
+- `components/` — layout global, blocos reutilizáveis, wizard de doação, fluxo de apadrinhamento e área do padrinho.
+- `public/img/` — imagens otimizadas com nomes semânticos.
+- `supabase/migrations/` — schema do banco (tabelas `leads` e `padrinhos`, com RLS).
+- Endereços antigos redirecionam para as páginas novas em `next.config.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Fluxos
 
-## Learn More
+| Fluxo | Funcionamento |
+|---|---|
+| Doação | Wizard em `/doacao`: Pix (QR em SVG), Itaú, PayPal BRL/EUR/USD, MB Way e IBAN. |
+| Apadrinhamento | `/apadrinhar/<plano>`: cadastro (salvo em `padrinhos`, status pendente) → Pix mensal ou PayPal → comprovante pelo WhatsApp. A equipe muda o status para `ativo` no Supabase. |
+| Formulários | `POST /api/forms`: grava em `leads` e avisa por e-mail quando `RESEND_API_KEY` existir. Sem banco nem e-mail, conclui pelo WhatsApp. |
+| Área do padrinho | `/minha-conta`: login sem senha (link + código por e-mail, requer Resend) e lista dos apadrinhamentos. |
 
-To learn more about Next.js, take a look at the following resources:
+## Pendências
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Aceitar os termos do Stripe e do Resend na Vercel para ativar assinatura por cartão e os e-mails (login e avisos de formulário).
+2. Fotos em alta e significado das barras de progresso ("Meta alcançada").
+3. Dados bancários em USD; novos eventos; revisão jurídica da Política de Privacidade.

@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Cores da marca Geração do Saber (extraídas do logo) */
+  --color-primary: #062448;      /* azul-marinho do logo: títulos e textos de destaque */
+  --color-secondary: #0b3260;    /* azul-marinho um tom acima: fundos de seção */
+  --color-navy: #041a35;         /* azul-marinho profundo: rodapé e sobreposições */
+  --color-accent: #ec722a;       /* laranja do logo: botões de ação e detalhes */
+  --color-accent-dark: #f5893f;  /* hover dos botões laranja (mais claro, mantém contraste com o texto) */
+  --color-accent-ink: #b24f14;   /* laranja escuro para texto sobre fundo claro (AA) */
+  --color-on-accent: #062448;    /* texto sobre fundo laranja */
+  --color-ink: #0f1010;
+  --color-gray: #888585;
+  --color-muted: #55595f;
+  --color-sun: #f6b42a;          /* amarelo do logo */
+  --color-ice: #fdf1e6;
+  --color-mist: #f8f6f2;
+  --color-line: #e8e3da;
+  --color-dark: #242424;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Tipografia */
+  --font-display: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-card: 20px;
+  --radius-btn: 10px;
+  --radius-section: 40px;
+
+  --shadow-card: 0 1px 2px rgb(6 36 72 / 0.06), 0 12px 32px -12px rgb(6 36 72 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(6 36 72 / 0.08), 0 24px 48px -16px rgb(6 36 72 / 0.28);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-kenburns: kenburns 14s ease-out both;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    overflow-x: clip;
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h5 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  h4, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-sun);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Textura de pontos usada nas artes da marca (fr-blue-bg / help-other1) */
+  .dots {
+    background-image: radial-gradient(rgb(255 255 255 / 0.16) 1.4px, transparent 1.6px);
+    background-size: 18px 18px;
+  }
+  .dots-blue {
+    background-image: radial-gradient(rgb(6 36 72 / 0.14) 1.4px, transparent 1.6px);
+    background-size: 18px 18px;
+  }
+  /* Grão sutil para os blocos azuis */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
 }
