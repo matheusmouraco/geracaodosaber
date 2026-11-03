@@ -88,7 +88,7 @@ export function SponsorFlow({ plan }: { plan: Plan }) {
                 {method === "pix" ? (
                   <div className="grid items-start gap-6 md:grid-cols-[auto_1fr]">
                     <div className="mx-auto rounded-2xl bg-white p-4 shadow-[var(--shadow-card)]">
-                      <QRCodeSVG value={pixBRL.code} size={168} level="M" title="QR Code Pix do Geração do Saber" />
+                      <QRCodeSVG value={pixBRL.code} size={168} level="M" title="QR Code Pix do New Generation" />
                     </div>
                     <div className="space-y-3">
                       <p className="text-[14px] text-muted">

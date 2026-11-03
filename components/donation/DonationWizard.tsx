@@ -373,7 +373,7 @@ function MethodPanel({ currency, method, amount }: { currency: Currency; method:
     return (
       <div className="grid items-start gap-6 md:grid-cols-[auto_1fr]">
         <div className="mx-auto rounded-2xl bg-white p-4 shadow-[var(--shadow-card)]">
-          <QRCodeSVG value={pixBRL.code} size={184} level="M" fgColor="#0F1010" title="QR Code Pix do Geração do Saber" />
+          <QRCodeSVG value={pixBRL.code} size={184} level="M" fgColor="#0F1010" title="QR Code Pix do New Generation" />
         </div>
         <div className="space-y-3">
           <h3 className="font-display text-2xl font-black text-secondary">Doar via Pix</h3>
@@ -446,7 +446,7 @@ function MethodPanel({ currency, method, amount }: { currency: Currency; method:
 function ThanksStep({ onRestart }: { onRestart: () => void }) {
   const [shared, setShared] = useState(false);
   async function share() {
-    const data = { title: "Geração do Saber", text: "Acabei de apoiar o Geração do Saber. Juntos fazemos a diferença no mundo de cada criança!", url: site.url };
+    const data = { title: "New Generation", text: "Acabei de apoiar o New Generation. Juntos fazemos a diferença no mundo de cada criança!", url: site.url };
     if (navigator.share) {
       await navigator.share(data).catch(() => null);
     } else {

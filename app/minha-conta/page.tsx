@@ -5,7 +5,7 @@ import { Container } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Minha Conta",
-  description: "Área do padrinho e da madrinha do Geração do Saber: acompanhe seu apadrinhamento.",
+  description: "Área do padrinho e da madrinha do New Generation: acompanhe seu apadrinhamento.",
   robots: { index: false },
 };
 

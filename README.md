@@ -1,6 +1,6 @@
-# Geração do Saber — site
+# New Generation — site
 
-Site do Geração do Saber, projeto da Cross Missions na Guiné-Bissau. Next.js 16 (App Router, Cache Components) · Tailwind CSS v4 · Framer Motion · Embla · zod · Supabase.
+Site do New Generation, projeto da Cross Missions na Guiné-Bissau. Next.js 16 (App Router, Cache Components) · Tailwind CSS v4 · Framer Motion · Embla · zod · Supabase.
 Publicado na Vercel em https://geracaodosaber.vercel.app (crossmissions.vercel.app redireciona).
 
 ```bash

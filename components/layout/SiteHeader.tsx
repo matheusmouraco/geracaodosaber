@@ -81,7 +81,7 @@ export function SiteHeader() {
           )}
         >
           <nav aria-label="Principal" className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-6 px-4 sm:px-6 lg:h-[84px] lg:px-8">
-            <Link href="/" aria-label="Geração do Saber, página inicial" className="relative h-[52px] w-[136px] shrink-0 lg:h-[62px] lg:w-[162px]">
+            <Link href="/" aria-label="New Generation, página inicial" className="relative h-[52px] w-[136px] shrink-0 lg:h-[62px] lg:w-[162px]">
               <Image src={site.logo.white} alt="" fill sizes="162px" loading="eager" className={cn("object-contain object-left transition-opacity duration-300", solid ? "opacity-0" : "opacity-100")} />
               <Image src={site.logo.color} alt="" fill sizes="162px" loading="eager" className={cn("object-contain object-left transition-opacity duration-300", solid ? "opacity-100" : "opacity-0")} />
             </Link>
@@ -155,7 +155,7 @@ export function SiteHeader() {
             >
               <div className="flex items-center justify-between">
                 <div className="relative h-[50px] w-[130px]">
-                  <Image src={site.logo.white} alt="Geração do Saber" fill sizes="130px" className="object-contain object-left" />
+                  <Image src={site.logo.white} alt="New Generation" fill sizes="130px" className="object-contain object-left" />
                 </div>
                 <button type="button" onClick={() => setOpen(false)} aria-label="Fechar menu" className="grid size-11 place-items-center rounded-[10px] hover:bg-white/10">
                   <X className="size-6" />

@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
-  description: "Como o Geração do Saber coleta, usa e protege os dados pessoais enviados pelo site, conforme a LGPD.",
+  description: "Como o New Generation coleta, usa e protege os dados pessoais enviados pelo site, conforme a LGPD.",
   alternates: { canonical: "/privacidade" },
 };
 

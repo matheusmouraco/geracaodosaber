@@ -19,9 +19,9 @@ import { pillars } from "@/content/pillars";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Geração do Saber | Juntos fazemos a diferença no mundo de cada criança" },
+  title: { absolute: "New Generation | Juntos fazemos a diferença no mundo de cada criança" },
   description:
-    "Apadrinhe uma criança, doe ou seja voluntário na Guiné-Bissau. O Geração do Saber, projeto da Cross Missions, leva educação, alimentação, saúde e fé a comunidades vulneráveis nos países de língua portuguesa.",
+    "Apadrinhe uma criança, doe ou seja voluntário na Guiné-Bissau. O New Generation, projeto da Cross Missions, leva educação, alimentação, saúde e fé a comunidades vulneráveis nos países de língua portuguesa.",
   alternates: { canonical: "/" },
 };
 

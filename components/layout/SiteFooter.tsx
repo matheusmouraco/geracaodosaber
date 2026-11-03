@@ -13,7 +13,7 @@ export function SiteFooter() {
       <Container className="relative grid gap-12 py-16 md:grid-cols-[1.3fr_1fr_1fr] lg:py-20">
         <div className="max-w-sm">
           <div className="relative h-[77px] w-[200px]">
-            <Image src={site.logo.white} alt="Geração do Saber" fill sizes="200px" className="object-contain object-left" />
+            <Image src={site.logo.white} alt="New Generation" fill sizes="200px" className="object-contain object-left" />
           </div>
           <p className="mt-6 text-[15px] leading-relaxed text-white/75">
             Escolas, alimentação, saúde e esperança para crianças e famílias na Guiné-Bissau.

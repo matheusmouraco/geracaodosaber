@@ -9,5 +9,5 @@ export function formToWhatsapp(type: FormType, data: Record<string, string | und
   const lines = Object.entries(data)
     .filter(([k, v]) => v && k !== "moeda")
     .map(([k, v]) => `${fieldLabels[k as FieldName] ?? k}: ${v}`);
-  return waLink(`Olá! Vim do site do Geração do Saber.\n*${formTitles[type]}*\n${lines.join("\n")}`);
+  return waLink(`Olá! Vim do site do New Generation.\n*${formTitles[type]}*\n${lines.join("\n")}`);
 }

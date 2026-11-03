@@ -12,7 +12,7 @@ const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "Geração do Saber | Juntos fazemos a diferença no mundo de cada criança", template: "%s | Geração do Saber" },
+  title: { default: "New Generation | Juntos fazemos a diferença no mundo de cada criança", template: "%s | New Generation" },
   description: site.description,
   applicationName: site.name,
   openGraph: {

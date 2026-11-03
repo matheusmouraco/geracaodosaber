@@ -1,11 +1,11 @@
 export const site = {
-  name: "Geração do Saber",
+  name: "New Generation",
   /** Organização responsável pelo projeto */
   parent: "Cross Missions",
   legalName: "Associação Cross Missions",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://geracaodosaber.vercel.app",
   description:
-    "Geração do Saber, projeto da Cross Missions na Guiné-Bissau: educação infantil, alimentação, saúde, formação de professores e apadrinhamento de crianças.",
+    "New Generation, projeto da Cross Missions na Guiné-Bissau: educação infantil, alimentação, saúde, formação de professores e apadrinhamento de crianças.",
   phone: "+55 11 98927-0283",
   phoneHref: "tel:+5511989270283",
   email: "contato.cmissions@gmail.com",
@@ -16,10 +16,10 @@ export const site = {
   whatsapp:
     "https://api.whatsapp.com/send/?phone=5511989270283&text=Ol%C3%A1%21+Vim+do+seu+site%21",
   logo: {
-    color: "/img/marca/geracao-do-saber-v2.png",
-    white: "/img/marca/geracao-do-saber-v2-branco.png",
+    color: "/img/marca/new-generation.png",
+    white: "/img/marca/new-generation-branco.png",
     /** proporção largura/altura do logo */
-    ratio: 1000 / 384,
+    ratio: 1000 / 380,
   },
   verse: "O que fizer a estes pequeninos a mim fizestes",
 } as const;

@@ -44,7 +44,7 @@ export async function POST(req: Request) {
   const code = data.properties.email_otp;
   const sent = await sendEmail({
     to: email,
-    subject: `${code} é o seu código de acesso — Geração do Saber`,
+    subject: `${code} é o seu código de acesso — New Generation`,
     html: emailLayout(
       "Seu acesso à área do padrinho",
       `<p style="font-size:15px;line-height:1.6">Toque no botão para entrar. O acesso vale por 1 hora e só pode ser usado uma vez.</p>

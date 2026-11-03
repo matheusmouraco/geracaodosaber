@@ -7,7 +7,7 @@ import { Container } from "@/components/ui";
 // Página reservada: o título e o texto de apresentação do projeto ainda serão enviados
 export const metadata: Metadata = {
   title: "Enjoy",
-  description: "Enjoy, um dos projetos do Geração do Saber.",
+  description: "Enjoy, um dos projetos do New Generation.",
   alternates: { canonical: "/enjoy" },
   robots: { index: false },
 };

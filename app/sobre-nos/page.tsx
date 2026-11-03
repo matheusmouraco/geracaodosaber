@@ -13,7 +13,7 @@ import { Reveal } from "@/components/motion";
 export const metadata: Metadata = {
   title: "Quem Somos",
   description:
-    "Conheça o Geração do Saber e a Cross Missions: desde 2018 referência em transformação social nos países de língua portuguesa, com escolas, alimentação e saúde na Guiné-Bissau.",
+    "Conheça o New Generation e a Cross Missions: desde 2018 referência em transformação social nos países de língua portuguesa, com escolas, alimentação e saúde na Guiné-Bissau.",
   alternates: { canonical: "/sobre-nos" },
   openGraph: { images: ["/img/fotos/muro-pintado.jpg"] },
 };

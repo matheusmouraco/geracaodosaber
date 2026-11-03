@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cores da marca Geração do Saber (extraídas do logo) */
+  /* Cores da marca New Generation (extraídas do logo) */
   --color-primary: #062448;      /* azul-marinho do logo: títulos e textos de destaque */
   --color-secondary: #0b3260;    /* azul-marinho um tom acima: fundos de seção */
   --color-navy: #041a35;         /* azul-marinho profundo: rodapé e sobreposições */
