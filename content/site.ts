@@ -3,7 +3,7 @@ export const site = {
   /** Organização responsável pelo projeto */
   parent: "Cross Missions",
   legalName: "Associação Cross Missions",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://geracaodosaber.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://newgeneration.one",
   description:
     "New Generation, projeto da Cross Missions na Guiné-Bissau: educação infantil, alimentação, saúde, formação de professores e apadrinhamento de crianças.",
   phone: "+55 11 98927-0283",

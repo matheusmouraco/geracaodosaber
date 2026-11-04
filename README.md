@@ -1,7 +1,7 @@
 # New Generation — site
 
 Site do New Generation, projeto da Cross Missions na Guiné-Bissau. Next.js 16 (App Router, Cache Components) · Tailwind CSS v4 · Framer Motion · Embla · zod · Supabase.
-Publicado na Vercel em https://geracaodosaber.vercel.app (crossmissions.vercel.app redireciona).
+Publicado na Vercel em https://newgeneration.one (www, geracaodosaber.vercel.app e crossmissions.vercel.app redirecionam).
 
 ```bash
 npm install
