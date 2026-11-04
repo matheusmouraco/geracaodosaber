@@ -5,7 +5,10 @@ export type Project = {
   summary: string;
   body: string;
   image: string;
-  progress: number;
+  /** Sem valor, o card não mostra a barra de progresso */
+  progress?: number;
+  /** Projetos com página própria abrem a página em vez do resumo em janela */
+  href?: string;
   /** Variações de texto usadas na Home */
   home?: { title?: string; summary?: string; body?: string };
 };
@@ -81,6 +84,20 @@ export const projects: Project[] = [
     body: "Desenvolvemos projetos assistenciais como construção de casas, perfuração de poços, reforma de escolas e implementação de projetos agrícolas. Cada iniciativa é uma resposta prática às necessidades locais, promovendo dignidade e melhores condições de vida. Esses projetos são um reflexo do nosso compromisso em transformar realidades. Com sua ajuda, podemos continuar construindo comunidades fortes, seguras e cheias de esperança.",
     image: "/img/projetos/projetos-em-desenvolvimento.jpg",
     progress: 20,
+  },
+  {
+    slug: "enjoy",
+    tagline: "Um tempo para desacelerar, conviver e criar memórias juntos.",
+    title: "Enjoy",
+    summary: "Um encontro para famílias e amigos conviverem e criarem memórias juntos.",
+    body: [
+      "O Enjoy é um encontro pensado para famílias e amigos conviverem e criarem memórias juntos. Enquanto as crianças brincam, ouvem histórias e participam em atividades lúdicas, sempre acompanhadas por uma equipe dedicada, os pais têm um momento tranquilo só para si.",
+      "Há conversas e palestras sobre os temas do dia-a-dia em família: educação dos filhos, rotinas, relação entre pais e filhos e a arte de conviver bem em casa.",
+      "Também há momentos para viver em família: brincadeiras entre pais e filhos, atividades para criar juntos e uma mesa partilhada onde todos se sentam lado a lado.",
+      "Num ambiente acolhedor e descontraído, o Enjoy é um convite para fortalecer laços, conhecer outras famílias e sair com o coração mais leve e ideias práticas para levar para casa.",
+    ].join("\n\n"),
+    image: "/img/fotos/festa-dia-feliz.jpg",
+    href: "/enjoy",
   },
 ];
 

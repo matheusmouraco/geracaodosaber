@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Heart, X } from "lucide-react";
 import { progressLabel, type Project } from "@/content/projects";
@@ -9,6 +10,8 @@ import { ProgressBar, Reveal } from "@/components/motion";
 import { cn } from "@/lib/cn";
 
 type Variant = "home" | "default";
+
+const linkClass = "group/sm inline-flex items-center gap-2 font-ui text-[15px] font-semibold text-primary hover:text-secondary";
 
 const resolve = (p: Project, v: Variant) => ({
   ...p,
@@ -47,20 +50,25 @@ export function ProjectGrid({ projects, variant = "default", layout = "grid" }: 
                 <div className="flex flex-1 flex-col p-6 md:p-7">
                   <h3 className="font-display text-2xl font-extrabold leading-tight text-primary md:text-[26px]">{p.title}</h3>
                   <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted md:text-base">{p.summary}</p>
-                  <div className="mt-6">
-                    <ProgressBar value={p.progress} label={progressLabel} />
-                  </div>
+                  {p.progress !== undefined && (
+                    <div className="mt-6">
+                      <ProgressBar value={p.progress} label={progressLabel} />
+                    </div>
+                  )}
                   <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <button
-                      type="button"
-                      onClick={() => setActive(p)}
-                      aria-haspopup="dialog"
-                      className="group/sm inline-flex items-center gap-2 font-ui text-[15px] font-semibold text-primary hover:text-secondary"
-                    >
-                      Saiba mais
-                      <span className="sr-only"> sobre {p.title}</span>
-                      <ArrowRight className="size-4 transition-transform group-hover/sm:translate-x-1" aria-hidden />
-                    </button>
+                    {p.href ? (
+                      <Link href={p.href} className={linkClass}>
+                        Saiba mais
+                        <span className="sr-only"> sobre {p.title}</span>
+                        <ArrowRight className="size-4 transition-transform group-hover/sm:translate-x-1" aria-hidden />
+                      </Link>
+                    ) : (
+                      <button type="button" onClick={() => setActive(p)} aria-haspopup="dialog" className={linkClass}>
+                        Saiba mais
+                        <span className="sr-only"> sobre {p.title}</span>
+                        <ArrowRight className="size-4 transition-transform group-hover/sm:translate-x-1" aria-hidden />
+                      </button>
+                    )}
                   </div>
                 </div>
               </article>
@@ -98,9 +106,11 @@ export function ProjectGrid({ projects, variant = "default", layout = "grid" }: 
             </div>
             <div className="p-6 md:p-8">
               <p className="text-[16px] leading-relaxed text-ink/85 md:text-[17px]">{active.body}</p>
-              <div className="mt-6 max-w-sm">
-                <ProgressBar value={active.progress} label={progressLabel} />
-              </div>
+              {active.progress !== undefined && (
+                <div className="mt-6 max-w-sm">
+                  <ProgressBar value={active.progress} label={progressLabel} />
+                </div>
+              )}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/doacao">
                   <Heart className="size-4 fill-current" aria-hidden /> Apoiar este projeto
